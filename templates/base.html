@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Application</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/SSE.svg' %}">
+  <!-- Add Bootstrap CSS link here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+  <script src="https://unpkg.com/markerjs2/markerjs2.js"></script>
+  <script type="module" src="{% static 'JS/script.js' %}"></script>
+  <script type="module" src="{% static 'JS/pdf_file.js' %}"></script>
+  <script type="module" src="{% static 'JS/ajax_post_call.js' %}"></script>
+  <script type="module" src="{% static 'JS/pdffile.js' %}"></script>
+  <script type="module" src="{% static 'JS/image_function.js' %}"></script>
+  <!-- <script src="js/jsPDF/dist/jspdf.umd.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <img src="{% static 'img/SSE_1.png' %}" style="width: auto; height: auto;">
+        </a>
+        <!-- Toggle button -->
+        <div id="button_direc">
+            <div class="col-md-12 text-center">
+             <button type="button" class="btn btn-dark" id="All_Button">All Record</button>  
+         <!-- Right elements -->
+         <a href="admin/">
+            <button type="submit" class="btn btn-warning" id="Admin_button">Admin</button>
+        </a>
+        </div>
+    </div>
+
+        
+        <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+{% block content%}
+
+{% endblock %}
+
+
+<div style="height: 150px;"></div>
+
+<!-- Footer -->
+<footer class="bg-primary text-center text-white fixed-bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">salmansajidtech.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  <!-- Add Bootstrap JS and jQuery links here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/jsPDF/dist/jspdf.umd.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
