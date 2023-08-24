@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from json import loads as jsonloads
 from PIL import Image
-import cv2 as cv
 import os
 
 from django.template.loader import get_template 
@@ -83,9 +82,10 @@ def Form_Data(request):
         img=request.FILES['images']
         for i in img_path_Q:
                 try:
-                    im = Image.open(request.FILES[i])
-                    frame = cv.cvtColor(np.array(im), cv.COLOR_RGB2BGR)
-                    print("image",frame)
+                    pass
+                    # im = Image.open(request.FILES[i])
+                    # frame = cv.cvtColor(np.array(im), cv.COLOR_RGB2BGR)
+                    # print("image",frame)
                 except:
                     pass
     return HttpResponse('done')
