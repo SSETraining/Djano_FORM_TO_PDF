@@ -7,3 +7,5 @@ pdfkit
 Pillow
 reportlab
 django-debug-toolbar
+opencv-contrib-python
+fpdf
