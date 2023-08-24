@@ -1,24 +1,21 @@
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
-# from .models import Question,Modern_Home,Sales_team,Finished_Inventory
-from .models import Question,Builder_Data,Modern_Home,Sales_team,Finished_Inventory,Join_Inventory,Join_Modern_Home,Join_Sales
+from .models import Question,Modern_Home,Sales_team,Finished_Inventory,Builder_Data
+# from .models import Question,Builder_Data,Modern_Home,Sales_team,Finished_Inventory,Join_Inventory,Join_Modern_Home,Join_Sales
 from django.core.serializers import serialize
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from json import loads as jsonloads
-import pdfkit
 from PIL import Image
 import cv2 as cv
 import os
 
 from django.template.loader import get_template 
 from django.template import Context
-import pdfkit
 import numpy as np
 import json
 from Survey import cuatom_function
-# import pdfkit
-# config = pdfkit.configuration(wkhtmltopdf ="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")  
+
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer
@@ -30,11 +27,6 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 import reportlab.platypus
-from PIL import Image
-
-
-from django.http import FileResponse
-from fpdf import  FPDF
 
 def index(request):
     create_pdf()
