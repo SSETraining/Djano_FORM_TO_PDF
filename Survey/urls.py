@@ -13,3 +13,4 @@ urlpatterns = [
     path('Form_Data',views.Form_Data),
     path('PDF_FILE',views.PDF_FILE)
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
