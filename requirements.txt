@@ -1,8 +1,6 @@
 psycopg2-binary
 pysqlite
-dj-database-url==0.5.0
-dj-static==0.0.6
-django==2.2.2
+django
 python-dotenv==0.20.0
 numpy
 pdfkit
