@@ -4,4 +4,3 @@ numpy
 Pillow
 reportlab
 django-debug-toolbar
-opencv-python
