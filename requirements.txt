@@ -1,5 +1,5 @@
 psycopg2-binary
- pysqlite
+pysqlite
 dj-database-url==0.5.0
 dj-static==0.0.6
 Django
