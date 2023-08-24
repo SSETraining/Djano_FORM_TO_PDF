@@ -1,5 +1,5 @@
 psycopg2-binary
-pysqlite
+django-s3-sqlite
 django
 python-dotenv==0.20.0
 numpy
