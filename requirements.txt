@@ -32,3 +32,4 @@ numpy
 pdfkit
 Pillow
 reportlab
+debug_toolbar
