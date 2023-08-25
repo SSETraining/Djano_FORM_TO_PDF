@@ -1,10 +1,9 @@
 {
-    "version": 2,
     "builds": [
     {
-    "src": "Django_Survey_Form/wsgi.py",
-    "use": "@vercel/python",
-    "config": { "maxLambdaSize": "10000mb", "runtime": "python3.9" }
+    "src": "Django_Survey_Form/Django_Survey_Form/wsgi.py",
+    "use": "@ardnt/vercel-python-wsgi",
+    "config": { "maxLambdaSize": "100000mb", "runtime": "python3.9" }
     },
     {
     "src": "build_files.sh",
@@ -21,7 +20,7 @@
     },
     {
     "src": "/(.*)",
-    "dest": "Django_Survey_Form/wsgi.py"
+    "dest": "Django_Survey_Form/Django_Survey_Form/wsgi.py"
     }
     ]
     }
