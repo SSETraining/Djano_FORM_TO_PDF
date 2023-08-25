@@ -3,3 +3,4 @@ python-dotenv==0.20.0
 numpy
 Pillow
 reportlab
+psycopg2-binary
