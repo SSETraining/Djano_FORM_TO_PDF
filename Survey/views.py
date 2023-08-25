@@ -29,7 +29,7 @@ import reportlab.platypus
 
 def index(request):
     print("LOG!","enter in the index")
-    return render(request)
+    return render(request,'index.html')
     # return render(request,'index.html',context={"Question":Question.objects.all(),
                                                 # "Modern_Home":Modern_Home.objects.all(),
                                                 # "Sales_team":Sales_team.objects.all(),
