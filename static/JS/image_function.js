@@ -1,3 +1,4 @@
+console.log("enter in the image_function.js")
 function get_images(image,descrip){
     console.log("Enter in the get images")
     console.log(image)
