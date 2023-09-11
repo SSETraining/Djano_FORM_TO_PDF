@@ -4,15 +4,16 @@
 {% load static %}
 {% load custom_tags %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- <script src="{% static 'JS/script.js' %}"></script> -->
-<script src="{% static 'JS/pdf_file.js' %}"></script>
-<script src="{% static 'JS/pdffile.js' %}"></script>
-<script src="{% static 'JS/image_function.js' %}"></script>
-<!-- <script src="{% static 'JS/ajax_post_call.js' %}"></script> -->
-    <form method='post' class="checkbox-form" id="uploadForm" enctype="multipart/form-data">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+<script  src="{% static 'JS/pdf_file.js' %}"></script>
+<script  src="{% static 'JS/pdffile.js' %}"></script>
+<script  src="{% static 'JS/image_function.js' %}"></script>
+<script  src="{% static 'JS/ajax_post_call.js' %}"></script>
+<script  src="{% static 'JS/validation.js' %}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<form method='post' class="checkbox-form" id="uploadForm" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="container mt-4">
           <div class="input-group input-group-sm mb-3">
@@ -31,13 +32,13 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <!-- <label for="textInput">Inspected by: </label> -->
-                  <input type="text" class="form-control" id="textInput" placeholder="Inspected By" required>
+                  <input type="text" class="form-control" id="textInput" placeholder="Inspected By" required />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <!-- <label for="dateInput">Date:</label> -->
-                  <input type="date" class="form-control" id="dateInput" placeholder="Date" required>
+                  <input type="date" class="form-control" id="dateInput" placeholder="Date" required />
                 </div>
               </div>
             </div>
@@ -46,7 +47,7 @@
       <!-- Question 1 -->
       <div class="container mt-4">
         <div class="center-rectangle">
-          <h2 class="text-center">General Community Conditions!</h2>
+          <h2 class="text-center">General Community Conditions</h2>
         <div class="form-group">
           {%for i in Question %}
           <label id="Question_label">{{i.question_text}}</label>
@@ -86,14 +87,14 @@
   
             <div class="col-md-3" class="mb-3">
               <div class="form-check">
-                    <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_Q{{forloop.counter }}">
+                    <input type="file"  class="btn btn-primary" class="form-check-input" id="imageFile_Q{{forloop.counter }}">
             </div>
             </div>
 
             <div class="col-md-3"> 
              <div class="form-check">
                 <!-- <label for="imageDescription_Q">Image Description</label> -->
-                <input type="text" class="form-control" id="imageDescription_Q" placeholder="Image description">
+                <input type="text" class="form-control" id="imageDescription_Q{{forloop.counter }}" placeholder="Image description">
              </div> 
             </div>
             </div>
@@ -118,7 +119,7 @@
       <!-- Question 1 -->
       <div class="container mt-4">
       <div class="center-rectangle1">
-        <h2 class="text-center">Model Home!</h2>
+        <h2 class="text-center">Model Home</h2>
       <div class="form-group">
         {%for i in Modern_Home %}
         <label id="Home_label">{{i.question_text}}</label>
@@ -158,14 +159,14 @@
 
           <div class="col-md-3" class="mb-3">
             <div class="form-check">
-                  <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_H">
+                  <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_H{{forloop.counter }}">
           </div>
           </div>
 
           <div class="col-md-3">
           <div class="form-check">
               <!-- <label for="imageDescription_H">Image Description</label> -->
-              <input type="text" class="form-control" id="imageDescription_H" placeholder="Image description">
+              <input type="text" class="form-control" id="imageDescription_H{{forloop.counter }}" placeholder="Image description">
           </div>
           </div>
           </div>
@@ -191,7 +192,7 @@
 <!-- Question 1 -->
 <div class="container mt-4">
 <div class="center-rectangle2">
-        <h2 class="text-center">Sales Team & Sales Center!</h2>
+        <h2 class="text-center">Sales Team & Sales Center</h2>
       <div class="form-group">
         {%for i in Sales_team %}
         <label id="Sales_label">{{i.question_text}}</label>
@@ -231,14 +232,14 @@
 
           <div class="col-md-3" class="mb-3">
             <div class="form-check">
-                  <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_S">
+                  <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_S{{forloop.counter }}">
           </div>
           </div>
 
           <div class="col-md-3">
           <div class="form-check">
               <!-- <label for="imageDescription_S">Image Description</label> -->
-              <input type="text" class="form-control" id="imageDescription_S" placeholder="Image description">
+              <input type="text" class="form-control" id="imageDescription_S{{forloop.counter }}" placeholder="Image description">
           </div>
           </div>
           
@@ -262,7 +263,7 @@
 <!-- Question 1 -->
 <div class="container mt-4">
 <div class="center-rectangle3">
-  <h2 class="text-center">Finished Inventory!</h2>
+  <h2 class="text-center">Finished Inventory</h2>
 <div class="form-group">
   {%for i in Finished_Inventory %}
   <label id="Inventory_label">{{i.question_text}}</label>
@@ -302,14 +303,14 @@
 
     <div class="col-md-3" class="mb-3">
       <div class="form-check">
-            <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_F">
+            <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile_F{{forloop.counter }}">
     </div>
     </div>
 
     <div class="col-md-3">
     <div class="form-check">
         <!-- <label for="imageDescription_F">Image Description</label> -->
-        <input type="text" class="form-control" id="imageDescription_F" placeholder="Image description">
+        <input type="text" class="form-control" id="imageDescription_F{{forloop.counter }}" placeholder="Image description">
     </div>
     </div>
     <!-- Model start -->
@@ -342,25 +343,25 @@
     </div>
     <!--  -->
     <div class="modal-body">
-      <form id="image-upload-form" enctype="multipart/form-data">
+      <form method='post' id="image-upload-form" enctype="multipart/form-data">
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">HOME ADDRESS</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="address" required >
       </div>
 
       <!-- Test-1 -->
       <div class="row" id="row-1">
         <div class="col-md-4">
-          <span class="input-group-text">Front Images</span>
+          <span id="span_id" class="input-group-text">Front Images</span>
         </div>
         <div class="col-md-8">
-          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile1" name="front-image" multiple>
+          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile1" name="front-image" multiple required>
         </div>
       </div>
 
       <div class="row">
       <div class="col-md-12" style="margin: auto;">
-    <textarea class="form-control" id="paragraphInput" rows="3" maxlength="300" placeholder="Notes regarding the Front Images"></textarea>
+    <textarea class="form-control" id="paragraphInput" rows="4" maxlength="500" placeholder="Notes regarding the Front Images" required></textarea>
     </div>  
     </div>   
       <!-- End Test-1 -->
@@ -368,32 +369,32 @@
       <!-- Test-2 -->
       <div class="row" id="row-1">
         <div class="col-md-4">
-          <span class="input-group-text">Interior Images</span>
+          <span id="span_id" class="input-group-text">Interior Images</span>
         </div>
         <div class="col-md-8">
-          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile1" name="Interior-image" multiple>
+          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile2" name="Interior-image" multiple required>
         </div>
       </div>
 
       <div class="row">
       <div class="col-md-12" style="margin: auto;">
-    <textarea class="form-control" id="paragraphInput" rows="3" maxlength="300" placeholder="Notes regarding the Interior Images"></textarea>
+    <textarea class="form-control" id="paragraphInput_2" rows="4" maxlength="500" placeholder="Notes regarding the Interior Images" required></textarea>
     </div>  
     </div>   
       <!-- End Test-2 -->
       <!-- Test-3 -->
       <div class="row" id="row-1">
         <div class="col-md-4">
-          <span class="input-group-text">Back Images</span>
+          <span id="span_id" class="input-group-text">Back Images</span>
         </div>
         <div class="col-md-8">
-          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile1" name="Back-image" multiple>
+          <input type="file" class="btn btn-primary" class="form-check-input" id="imageFile3" name="Back-image" multiple required>
         </div>
       </div>
 
       <div class="row">
       <div class="col-md-12" style="margin: auto;">
-    <textarea class="form-control" id="paragraphInput" rows="3" maxlength="300" placeholder="Notes regarding the Back Images"></textarea>
+    <textarea class="form-control" id="paragraphInput_3" rows="4" maxlength="500" placeholder="Notes regarding the Back Images" required></textarea>
     </div>  
     </div>   
       <!-- End Test-3 -->
@@ -403,12 +404,12 @@
           <span class="input-group-text">Summary!</span>
         </div>
         <div class="col-md-12" >
-    <textarea class="form-control" id="paragraphInput" rows="5" maxlength="500" placeholder="Summary!"></textarea>
+    <textarea class="form-control" id="summary" rows="7" maxlength="800" placeholder="Summary!" required></textarea>
     </div> 
     </div>
       <!--  -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="submit_click">Submit</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
       </form>
@@ -435,7 +436,7 @@
     <div class="row">
     <div class="col-md-12">
       <div id="button_style">
-        <button type="button" id="sendCheckboxData"  class="btn btn-primary btn-lg">SUBMIT</button>
+        <!-- <button type="button" id="sendCheckboxData"   class="btn btn-primary btn-lg">SUBMIT</button> -->
         <button  type="button"  id="createPdfButton"  class="btn btn-secondary btn-lg" > PDF CONVERSION </button>
       </div>
       </div>
