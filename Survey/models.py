@@ -41,73 +41,77 @@ class Builder_Data(models.Model):
     def __str__(self):
         return self.Summary_Description
 
-class Join(models.Model):
-    Join_Key=models.AutoField(primary_key=True)
-    Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
-    mcq_question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    answer=models.CharField(max_length=2,null=False)
-    image_Description=models.CharField(max_length=250,null=True)
-    image = models.ImageField(upload_to="uploads",null=True)
-    def __str__(self):
-        return self.answer
-    def __str__(self):
-        return self.image_Description
-    def __str__(self):
-        return self.Foriegn_key
+class PDFDocument(models.Model):
+    pdf_file = models.FileField(upload_to='pdfs')
 
-class Join_Modern_Home(models.Model):
-    Join_Key=models.AutoField(primary_key=True)
-    Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
-    mcq_question = models.ForeignKey(Modern_Home, on_delete=models.CASCADE)
-    answer=models.CharField(max_length=2,null=False)
-    image_Description=models.CharField(max_length=250,null=True)
-    image = models.ImageField(upload_to="uploads_1",null=True)
-    def __str__(self):
-        return self.answer
-    def __str__(self):
-        return self.Foriegn_key
-    def __str__(self):
-        return self.image_Description
+# class Join(models.Model):
+#     Join_Key=models.AutoField(primary_key=True)
+#     Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
+#     mcq_question = models.ForeignKey(Question, on_delete=models.CASCADE)
+#     answer=models.CharField(max_length=2,null=False)
+#     image_Description=models.CharField(max_length=250,null=True)
+#     image = models.ImageField(upload_to="uploads",null=True)
+#     def __str__(self):
+#         return self.answer
+#     def __str__(self):
+#         return self.image_Description
+#     def __str__(self):
+#         return self.Foriegn_key
 
-class Join_Sales(models.Model):
-    Join_Key=models.AutoField(primary_key=True)
-    Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
-    mcq_question = models.ForeignKey(Sales_team, on_delete=models.CASCADE)
-    answer=models.CharField(max_length=2,null=False)
-    image_Description=models.CharField(max_length=250,null=True)
-    image = models.ImageField(upload_to="uploads_2",null=True)
-    def __str__(self):
-        return self.answer
-    def __str__(self):
-        return self.Foriegn_key
-    def __str__(self):
-        return self.image_Description
+# class Join_Modern_Home(models.Model):
+#     Join_Key=models.AutoField(primary_key=True)
+#     Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
+#     mcq_question = models.ForeignKey(Modern_Home, on_delete=models.CASCADE)
+#     answer=models.CharField(max_length=2,null=False)
+#     image_Description=models.CharField(max_length=250,null=True)
+#     image = models.ImageField(upload_to="uploads_1",null=True)
+#     def __str__(self):
+#         return self.answer
+#     def __str__(self):
+#         return self.Foriegn_key
+#     def __str__(self):
+#         return self.image_Description
 
-class Join_Inventory(models.Model):
-    Join_Key=models.AutoField(primary_key=True)
-    Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
-    mcq_question = models.ForeignKey(Finished_Inventory, on_delete=models.CASCADE)
-    answer=models.CharField(max_length=2,null=False)
-    image_Description=models.CharField(max_length=250,null=True)
-    image = models.ImageField(upload_to="uploads_3",null=True)
-    def __str__(self):
-        return self.answer
-    def __str__(self):
-        return self.Foriegn_key
-    def __str__(self):
-        return self.image_Description
+# class Join_Sales(models.Model):
+#     Join_Key=models.AutoField(primary_key=True)
+#     Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
+#     mcq_question = models.ForeignKey(Sales_team, on_delete=models.CASCADE)
+#     answer=models.CharField(max_length=2,null=False)
+#     image_Description=models.CharField(max_length=250,null=True)
+#     image = models.ImageField(upload_to="uploads_2",null=True)
+#     def __str__(self):
+#         return self.answer
+#     def __str__(self):
+#         return self.Foriegn_key
+#     def __str__(self):
+#         return self.image_Description
+
+# class Join_Inventory(models.Model):
+#     Join_Key=models.AutoField(primary_key=True)
+#     Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
+#     mcq_question = models.ForeignKey(Finished_Inventory, on_delete=models.CASCADE)
+#     answer=models.CharField(max_length=2,null=False)
+#     image_Description=models.CharField(max_length=250,null=True)
+#     image = models.ImageField(upload_to="uploads_3",null=True)
+#     def __str__(self):
+#         return self.answer
+#     def __str__(self):
+#         return self.Foriegn_key
+#     def __str__(self):
+#         return self.image_Description
     
-class Add_address(models.Model):
-    Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
-    address=models.CharField(max_length=150,null=False)
-    def __str__(self):
-        return self.Foriegn_key
-    def __str__(self):
-        return self.address
+# class Add_address(models.Model):
+#     Foriegn_key=models.ForeignKey(Builder_Data, on_delete=models.CASCADE)
+#     address=models.CharField(max_length=150,null=False)
+#     def __str__(self):
+#         return self.Foriegn_key
+#     def __str__(self):
+#         return self.address
 
-class ImageUpload(models.Model):
-     Foriegn_key=models.ForeignKey(Add_address, on_delete=models.CASCADE)
-     image = models.ImageField(upload_to="Inventory_uploads")     
-     def __str__(self):
-        return self.Foriegn_key.address
-     
+# class ImageUpload(models.Model):
+#     Foriegn_key=models.ForeignKey(Add_address, on_delete=models.CASCADE)
+#     image = models.ImageField(upload_to="Inventory_uploads")     
+#     def __str__(self):
+#         return self.Foriegn_key.address 
+
+
