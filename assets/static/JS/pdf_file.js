@@ -106,3 +106,4 @@ for(let i = 0; i < list1.length; i++)
 console.log("DICT",dict)
 return dict
 }
+// export{Fetch_data}
