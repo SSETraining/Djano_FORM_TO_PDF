@@ -1,12 +1,10 @@
-
-
 import os
 from dotenv import load_dotenv
 load_dotenv()
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+Individual_Inventory_Homes=[]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -81,7 +79,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Django_Survey_Form.wsgi.application'
 
-
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
