@@ -26,7 +26,6 @@ from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 import reportlab
-import cv2 as cv
 from Survey import data,helper
 from Django_Survey_Form import settings
 from reportlab.lib.utils import ImageReader
