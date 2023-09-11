@@ -4,3 +4,4 @@ numpy
 Pillow
 reportlab
 psycopg2-binary
+supabase
