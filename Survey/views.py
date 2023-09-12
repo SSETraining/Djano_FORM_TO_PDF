@@ -196,7 +196,7 @@ def create_pdf(Builder_name,Community_name,Inspected_by,date,summary,Q_summary,S
             Answer_Q,Answer_H,Answer_S,Answer_F,img_path_Q,des_Q,name_H,des_H,name_S,
             des_S,name_F,des_F):
     logo = "SSE.png"
-    filename='static/temp_data/output.pdf'
+    filename='static\temp_data\output.pdf'
     notes=[Q_summary,H_summary,S_summary,F_summary]
     answer_list=[Answer_Q,Answer_H,Answer_S,Answer_F]
     image_path_code=[img_path_Q,name_H,name_S,name_F]
