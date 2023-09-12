@@ -322,7 +322,7 @@ def create_pdf(Builder_name,Community_name,Inspected_by,date,summary,Q_summary,S
     story.append(Spacer(1, 0.4 * inch))
 
     # Coding part start of  Inventory!
-    path='./temp_images'
+    path='temp_images'
     path_list=os.listdir(path)
     ind=path_list.index('null.txt')
     path_list.pop(ind)
