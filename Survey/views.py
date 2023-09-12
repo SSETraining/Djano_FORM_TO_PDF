@@ -324,6 +324,8 @@ def create_pdf(Builder_name,Community_name,Inspected_by,date,summary,Q_summary,S
     # Coding part start of  Inventory!
     path='./temp_images'
     path_list=os.listdir(path)
+    ind=path_list.index('null.txt')
+    path_list.pop(ind)
     dict_counter=0
     if(len(path_list)!=0):
         heading = Paragraph("<b>Individual Inventory Homes</b>", styles["Title"])
