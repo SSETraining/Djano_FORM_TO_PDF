@@ -336,7 +336,7 @@ def create_pdf(Builder_name,Community_name,Inspected_by,date,summary,Q_summary,S
             heading = Paragraph("<b>"+str(settings.Individual_Inventory_Homes[dict_counter]['address'])+"</b>", styles["Title"])
             story.append(heading)
             # story.append(Spacer(1, 0.5 * inch))
-            image_folder_path=path+'/'+sub_path
+            image_folder_path=path+'\'+sub_path
             print("sub_path",sub_path)
             for image_class in os.listdir(image_folder_path):
                 table_data_Notes=[]
@@ -350,9 +350,9 @@ def create_pdf(Builder_name,Community_name,Inspected_by,date,summary,Q_summary,S
                 ]))
                 story.append(table_data_Notes_table)
                 image_data=[]
-                for image_path in os.listdir(image_folder_path+'/'+image_class):
-                    print("final",image_folder_path+'/'+image_class+'/'+image_path)
-                    image_data.append([Image(image_folder_path+'/'+image_class+'/'+image_path, width=240, height=235)])
+                for image_path in os.listdir(image_folder_path+'\'+image_class):
+                    print("final",image_folder_path+'\'+image_class+'\'+image_path)
+                    image_data.append([Image(image_folder_path+'\'+image_class+'\'+image_path, width=240, height=235)])
                 image_data=cuatom_function.return_double_list(image_data)
                 table_image_data = Table(image_data,colWidths=[3.5*inch,3.5*inch,3*inch])
                 table_image_data.setStyle(TableStyle([
